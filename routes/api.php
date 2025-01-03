@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/user', function() {
+
+    return "Hello word";
+
+});
+
+
+Route::post('/user', function() {
+    return response()->json("You have already posted");
+});
