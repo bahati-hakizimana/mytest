@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +15,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::get('/user', function() {
+// Route::get('/user', function() {
 
-    return "Hello word";
+//     return "Hello word";
 
-});
+// });
+
+// Route::post('/user', function () {
+//     return response()->json("Hello post api");
+// });
+
+// Route::delete('/user/{id}', function ($id) {
+//     return response($id, 200);
+// });
+
+// Route::put('/user/{id}', function ($id) {
+
+//     return response($id, 200);
+// });
 
 
-Route::post('/user', function() {
-    return response()->json("You have already posted");
-});
+
+Route::post('user/create', [UserController::class, 'create']);
